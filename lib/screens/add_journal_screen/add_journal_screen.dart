@@ -14,7 +14,24 @@ class AddJournalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('oi'),
+        title: Text(
+            "${WeekDay(journal.createdAt.weekday).long.toLowerCase()}, ${journal.createdAt.day} | ${journal.createdAt.month} | ${journal.createdAt.year}"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.check),
+            onPressed: () {},
+          )
+        ],
+      ),
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: TextField(
+          keyboardType: TextInputType.multiline,
+          style: TextStyle(fontSize: 24),
+          expands: true,
+          maxLines: null,
+          minLines: null,
+        ),
       ),
     );
   }
