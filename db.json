@@ -4,6 +4,18 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": "3b05a140-7103-11ef-97e0-a581d5134c8c",
+      "content": "",
+      "created_at": "2024-09-12 09:33:36.090133",
+      "updated_at": "2024-09-12 09:33:36.090143"
+    },
+    {
+      "id": "3dc3d6e0-7103-11ef-8e94-57a5b27c20ea",
+      "content": "",
+      "created_at": "2024-09-12 09:33:40.696193",
+      "updated_at": "2024-09-12 09:33:40.696204"
     }
   ],
   "comments": [
