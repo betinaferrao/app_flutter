@@ -9,6 +9,7 @@ void main() {
   runApp(const MyApp());
 
   JournalService service = JournalService();
+  // Exemplos teste
   // service.register(Journal.empty());
   service.getAll();
 }

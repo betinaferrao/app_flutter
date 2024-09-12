@@ -1,7 +1,3 @@
-// import 'dart:math';
-
-import 'package:http/http.dart';
-import 'package:http_interceptor/models/interceptor_contract.dart';
 import 'package:http_interceptor/http_interceptor.dart';
 import 'package:logger/logger.dart';
 
