@@ -17,8 +17,6 @@ class JournalService {
   }
 
   Future<bool> register(Journal journal) async {
-    // print(getUrl());
-    // print(journal);
     String journalJSON = json.encode(journal.toMap());
 
     http.Response response = await client.post(
@@ -34,12 +32,6 @@ class JournalService {
 
     return false;
   }
-
-  // Future<String> get() async {
-  //   http.Response response = await client.get(Uri.parse(getUrl()));
-  //   print(response.body);
-  //   return response.body;
-  // }
 
   Future<List<Journal>> getAll() async {
     http.Response response = await client.get(Uri.parse(getUrl()));
