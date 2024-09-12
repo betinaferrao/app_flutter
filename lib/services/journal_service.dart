@@ -5,27 +5,6 @@ import 'package:flutter_webapi_first_course/services/http_interceptors.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_interceptor/http/intercepted_client.dart';
 
-// class JournalService {
-//   static const String url = "http://192.168.200.135:3000/";
-//   static const String resource = "learnhttp/";
-
-//   String getURL() {
-//     return "$url$resource";
-//   }
-
-//   // void register(String content) {
-//   //   print(content);
-//   //   // http.post(Uri.parse(getURL()), body: {'content': ''});
-//   //   http.post(Uri.parse(getURL()), body: '{"content": "$content"}');
-//   // }
-
-//   Future<String> get() async {
-//     http.Response response = await http.get(Uri.parse(getURL()));
-//     print(response.body);
-//     return response.body;
-//   }
-// }
-
 class JournalService {
   static const String url = 'http://192.168.200.135:3000/';
   static const String resource = 'journals/';
@@ -72,14 +51,11 @@ class JournalService {
     List<Journal> list = [];
 
     List<dynamic> listDynamic = json.decode(response.body);
-    // print('list dynamic: $listDynamic');
 
     for (var jsonMap in listDynamic) {
       list.add(Journal.fromMap(jsonMap));
-      // print('jsonMap: $jsonMap');
     }
 
-    // print('list: $list');
     print(list.length);
     return list;
   }
