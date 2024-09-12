@@ -38,8 +38,8 @@ class JournalService {
   }
 
   Future<bool> register(Journal journal) async {
-    print(getUrl());
-    print(journal);
+    // print(getUrl());
+    // print(journal);
     String journalJSON = json.encode(journal.toMap());
 
     http.Response response = await client.post(
@@ -56,9 +56,31 @@ class JournalService {
     return false;
   }
 
-  Future<String> get() async {
+  // Future<String> get() async {
+  //   http.Response response = await client.get(Uri.parse(getUrl()));
+  //   print(response.body);
+  //   return response.body;
+  // }
+
+  Future<List<Journal>> getAll() async {
     http.Response response = await client.get(Uri.parse(getUrl()));
-    print(response.body);
-    return response.body;
+
+    if (response.statusCode != 200) {
+      throw Exception();
+    }
+
+    List<Journal> list = [];
+
+    List<dynamic> listDynamic = json.decode(response.body);
+    // print('list dynamic: $listDynamic');
+
+    for (var jsonMap in listDynamic) {
+      list.add(Journal.fromMap(jsonMap));
+      // print('jsonMap: $jsonMap');
+    }
+
+    // print('list: $list');
+    print(list.length);
+    return list;
   }
 }
